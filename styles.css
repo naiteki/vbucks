@@ -4,7 +4,6 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    transition: background 0.5s ease; /* Smooth background color transition */
 }
 
 .center-text {
@@ -15,27 +14,12 @@ body {
     font-size: 24px; /* Adjust the font size as needed */
 }
 
-.screen {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.5s ease;
-}
-
 #startPage {
-    background-color: #f9f9f9; /* Set background color for starting page */
+    margin-top: 20vh; /* Adjust the top margin as needed */
 }
 
 #calculator {
-    background-color: #ffffff; /* Set background color for calculator page */
-}
-
-#calculator.slide-left {
-    transform: translateX(-100%); /* Slide left transition */
-}
-
-#startPage.slide-right {
-    transform: translateX(100%); /* Slide right transition */
+    text-align: center;
 }
 
 .big-button {
