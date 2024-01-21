@@ -7,17 +7,10 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Screen 1: Quantity Input -->
-    <div id="screen1">
+    <!-- Quantity Input -->
+    <div>
         <label for="quantity">Enter Quantity:</label>
         <input type="number" id="quantity" name="quantity">
-        <button onclick="goToScreen2()">Next</button>
-    </div>
-
-    <!-- Screen 2: Multiplier Input -->
-    <div id="screen2" style="display: none;">
-        <label for="multiplier">Enter Multiplier:</label>
-        <input type="number" id="multiplier" name="multiplier">
         <button onclick="calculatePrice()">Calculate Price</button>
         <p id="result">Price: $0.00</p>
     </div>
