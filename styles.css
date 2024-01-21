@@ -18,6 +18,10 @@ body {
     margin-top: 20vh; /* Adjust the top margin as needed */
 }
 
+#calculator {
+    text-align: center;
+}
+
 .big-button {
     display: block;
     margin: 10px auto;
