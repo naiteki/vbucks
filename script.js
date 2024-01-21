@@ -2,9 +2,8 @@
 
 // Function to handle interest selection and slide transition
 function chooseInterest(interest) {
-    // Slide transition
-    document.getElementById("startPage").classList.add("slide-right");
-    document.getElementById("calculator").classList.add("slide-left");
+    // Hide the start page with a fade-out effect
+    document.getElementById("startPage").style.opacity = 0;
 
     setTimeout(function() {
         // Hide the start page
@@ -17,7 +16,7 @@ function chooseInterest(interest) {
         const typingLabel = document.getElementById("typingText");
         const textToType = "Enter Quantity for " + interest + ": ";
         typeText(typingLabel, textToType, 100);
-    }, 500); // Adjust the timeout duration to match the transition duration
+    }, 500); // Adjust the timeout duration to match the fade-out duration
 }
 
 // Function to calculate the price and display with typing effect
