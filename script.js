@@ -1,40 +1,23 @@
 // script.js
 
-// Function to simulate typing effect
-function typeText(element, text, delay, callback) {
-    let index = 0;
-    const typingInterval = setInterval(function() {
-        element.innerHTML += text[index];
-        index++;
-        if (index === text.length) {
-            clearInterval(typingInterval);
-            if (callback) {
-                callback();
-            }
-        }
-    }, delay);
-}
-
-// Call the typing function when the page is loaded
-window.onload = function() {
-    const typingStartPageLabel = document.getElementById("typingStartPage");
-    const textToTypeStartPage = "Choose your interest:";
-    const typingDelayStartPage = 100;
-    typeText(typingStartPageLabel, textToTypeStartPage, typingDelayStartPage);
-};
-
-// Function to handle interest selection
+// Function to handle interest selection and slide transition
 function chooseInterest(interest) {
-    // Hide the start page
-    document.getElementById("startPage").style.display = "none";
+    // Slide transition
+    document.getElementById("startPage").classList.add("slide-right");
+    document.getElementById("calculator").classList.add("slide-left");
 
-    // Display the calculator
-    document.getElementById("calculator").style.display = "block";
+    setTimeout(function() {
+        // Hide the start page
+        document.getElementById("startPage").style.display = "none";
 
-    // Update the typing text for quantity input
-    const typingLabel = document.getElementById("typingText");
-    const textToType = "Enter Quantity for " + interest + ": ";
-    typeText(typingLabel, textToType, 100);
+        // Display the calculator
+        document.getElementById("calculator").style.display = "block";
+
+        // Update the typing text for quantity input
+        const typingLabel = document.getElementById("typingText");
+        const textToType = "Enter Quantity for " + interest + ": ";
+        typeText(typingLabel, textToType, 100);
+    }, 500); // Adjust the timeout duration to match the transition duration
 }
 
 // Function to calculate the price and display with typing effect
