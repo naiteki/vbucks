@@ -3,7 +3,7 @@ function calculatePrice() {
     var quantity = document.getElementById("quantity").value;
 
     // Define your multiplier
-    var multiplier = 1.5; // Change this to your desired multiplier
+    var multiplier = 0.0045; // Change this to your desired multiplier
 
     // Calculate the price
     var price = quantity * multiplier;
