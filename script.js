@@ -17,11 +17,25 @@ function typeText(element, text, delay, callback) {
 
 // Call the typing function when the page is loaded
 window.onload = function() {
-    const typingLabel = document.getElementById("typingText");
-    const textToType = "Enter Quantity: ";
-    const typingDelay = 100; // milliseconds delay between typing each letter
-    typeText(typingLabel, textToType, typingDelay);
+    const typingStartPageLabel = document.getElementById("typingStartPage");
+    const textToTypeStartPage = "Choose your interest:";
+    const typingDelayStartPage = 100;
+    typeText(typingStartPageLabel, textToTypeStartPage, typingDelayStartPage);
 };
+
+// Function to handle interest selection
+function chooseInterest(interest) {
+    // Hide the start page
+    document.getElementById("startPage").style.display = "none";
+
+    // Display the calculator
+    document.getElementById("calculator").style.display = "block";
+
+    // Update the typing text for quantity input
+    const typingLabel = document.getElementById("typingText");
+    const textToType = "Enter Quantity for " + interest + ": ";
+    typeText(typingLabel, textToType, 100);
+}
 
 // Function to calculate the price and display with typing effect
 function calculatePrice() {
