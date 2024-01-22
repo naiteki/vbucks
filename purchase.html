@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="center-text big-text">
+        <p>Your Purchase</p>
+        <p>Price: $<span id="purchasePrice"></span></p>
+    </div>
+
+    <script>
+        // Extract the price from the query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const price = urlParams.get('price');
+
+        // Display the price on the purchase page
+        document.getElementById("purchasePrice").innerText = price;
+    </script>
+</body>
+</html>
