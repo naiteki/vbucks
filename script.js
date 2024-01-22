@@ -1,20 +1,5 @@
 // script.js
 
-// Function to simulate typing effect
-function typeText(element, text, delay, callback) {
-    let index = 0;
-    const typingInterval = setInterval(function() {
-        element.innerHTML += text[index];
-        index++;
-        if (index === text.length) {
-            clearInterval(typingInterval);
-            if (callback) {
-                callback();
-            }
-        }
-    }, delay);
-}
-
 // Function to handle interest selection
 function chooseInterest(interest) {
     // Hide the start page
@@ -50,3 +35,25 @@ function calculatePrice() {
     const typingResultLabel = document.getElementById("typingResult");
     typeText(typingResultLabel, price.toFixed(2), 50);
 }
+
+// Function to simulate typing effect
+function typeText(element, text, delay, callback) {
+    let index = 0;
+    const typingInterval = setInterval(function() {
+        element.innerHTML += text[index];
+        index++;
+        if (index === text.length) {
+            clearInterval(typingInterval);
+            if (callback) {
+                callback();
+            }
+        }
+    }, delay);
+}
+
+// Display the title with typing effect when the page loads
+document.addEventListener("DOMContentLoaded", function() {
+    const typingStartPage = document.getElementById("typingStartPage");
+    const textToType = "CHOOSE YOUR PATH";
+    typeText(typingStartPage, textToType, 100);
+});
