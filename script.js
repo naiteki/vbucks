@@ -15,14 +15,6 @@ function typeText(element, text, delay, callback) {
     }, delay);
 }
 
-// Call the typing function when the page is loaded
-window.onload = function() {
-    const typingStartPageLabel = document.getElementById("typingStartPage");
-    const textToTypeStartPage = "Choose your interest:";
-    const typingDelayStartPage = 100;
-    typeText(typingStartPageLabel, textToTypeStartPage, typingDelayStartPage);
-};
-
 // Function to handle interest selection
 function chooseInterest(interest) {
     // Hide the start page
@@ -30,6 +22,9 @@ function chooseInterest(interest) {
 
     // Display the calculator
     document.getElementById("calculator").style.display = "block";
+
+    // Clear previous results
+    document.getElementById("typingResult").innerHTML = "";
 
     // Update the typing text for quantity input
     const typingLabel = document.getElementById("typingText");
@@ -47,6 +42,9 @@ function calculatePrice() {
 
     // Calculate the price
     var price = quantity * multiplier;
+
+    // Clear previous result
+    document.getElementById("typingResult").innerHTML = "";
 
     // Display the result with typing effect
     const typingResultLabel = document.getElementById("typingResult");
