@@ -1,5 +1,3 @@
-// script.js
-
 // Function to handle interest selection
 function chooseInterest(interest) {
     // Hide the start page
@@ -34,6 +32,15 @@ function calculatePrice() {
     // Display the result with typing effect
     const typingResultLabel = document.getElementById("typingResult");
     typeText(typingResultLabel, price.toFixed(2), 50);
+}
+
+// Function to handle the purchase and display the price
+function purchase() {
+    // Get the calculated price
+    var calculatedPrice = document.getElementById("typingResult").innerHTML;
+
+    // Navigate to the purchase page and pass the price as a query parameter
+    window.location.href = 'purchase.html?price=' + calculatedPrice;
 }
 
 // Function to simulate typing effect
